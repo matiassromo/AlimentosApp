@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlimentosApp.LoginPage"
+             Title="Login Page"
+             BackgroundColor="DarkSlateGray">
+    <StackLayout VerticalOptions="Start" 
+                 HorizontalOptions="Center" 
+                 Margin="60">
+        <Entry Placeholder="Usuario" 
+               HorizontalTextAlignment="Center" 
+               FontSize="20"/>
+        <Entry Placeholder="Contraseña" 
+               HorizontalTextAlignment="Center" 
+               IsPassword="True"
+               FontSize="20"/>
+        <Button Text="Ingresar"
+                Margin="20"
+                BackgroundColor="Aquamarine"
+                TextColor="Black"
+                FontAttributes="Bold"
+                Clicked="OnIngresar"/>
+    </StackLayout>
+</ContentPage>

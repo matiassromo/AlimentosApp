@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlimentosApp.AlimentoPage"
+             Title="Pagina de Alimentos">
+    <VerticalStackLayout BackgroundColor="DarkSlateGrey">
+        <HorizontalStackLayout 
+         HorizontalOptions="Center">
+            <Image Source="alimento.png"
+                HeightRequest="80"
+                WidthRequest="80"
+                Aspect="Fill"
+                Margin="2"></Image>
+        </HorizontalStackLayout>
+        <Label HorizontalOptions="Center"
+            Text="Alimentos"
+            FontSize="30"></Label>
+        <Button Text="Nuevo Alimento"
+             BackgroundColor="Turquoise"
+             TextColor="Black"
+             FontAttributes="Bold"
+             FontSize="16"
+             Clicked="OnNuevoAlimento"
+             Margin="15"></Button>
+        <ListView x:Name="ListaAlimentos" 
+                  RowHeight="80">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="alimento.png"
+                                   HeightRequest="50"
+                                   WidthRequest="50"
+                                   Margin="15"></Image>
+                            <StackLayout Orientation="Vertical"
+                                      Margin="14">
+                                <Label Text="{Binding Nombre}"
+                                 FontSize="20"></Label>
+                                <Label Text="{Binding Cantidad}"
+                                 FontSize="15"></Label>
+                            </StackLayout>
+                        </StackLayout>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+    </VerticalStackLayout>
+</ContentPage>
