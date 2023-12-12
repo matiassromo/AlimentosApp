@@ -1,20 +1,26 @@
 using AlimentosApp.Models;
+using AlimentosApp.Services;
 using System.Collections.ObjectModel;
 
 namespace AlimentosApp;
 
 public partial class AlimentoPage : ContentPage
 {
-	public AlimentoPage()
+
+    private readonly APIService aPIService;
+    public AlimentoPage(APIService apiservice)
 	{
 		InitializeComponent();
+        aPIService = apiservice;
+
 	}
 
-    protected override void OnAppearing()
+    protected override async void OnAppearing()
     {
         base.OnAppearing();
-        var productos = new ObservableCollection<Alimento>(Utils.Utils.ListaAlimentos);
-        ListaAlimentos.ItemsSource = productos;
+        List<Alimento> listaAlimentos = await aPIService.GetAlimentos();
+        var alimentos = new ObservableCollection<Alimento>(listaAlimentos);
+        ListaAlimentos.ItemsSource = alimentos;
 
     }
 

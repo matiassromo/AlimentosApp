@@ -11,4 +11,14 @@ public partial class DetalleAlimentosPage : ContentPage
     {
 
     }
+
+    private void OnIncremento(object sender, EventArgs e)
+    {
+
+    }
+
+    private void OnDecremento(object sender, EventArgs e)
+    {
+
+    }
 }
