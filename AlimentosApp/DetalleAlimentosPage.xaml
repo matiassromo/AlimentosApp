@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlimentosApp.DetalleAlimentosPage"
+             Title="DetalleAlimentosPage">
+    <VerticalStackLayout BackgroundColor="DarkSlateGray">
+        <Image Source="alimento.png"
+           HorizontalOptions="Center"
+           HeightRequest="100"
+           WidthRequest="100"
+           Margin="10"/>
+        <Label x:Name="Nombre"
+          Text="Nombre:"
+          FontSize="25"
+          FontAttributes="Bold"
+          HorizontalOptions="Center"/>
+        <StackLayout Orientation="Horizontal"
+         Margin="5">
+            <Label Text="Cantidad: "
+         FontSize="20"
+        FontAttributes="Bold"/>
+            <Label x:Name="Cantidad"
+         Text="Cantidad"
+         FontSize="20"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"
+         Margin="5">
+            <Label Text="Descripcion: "
+        FontSize="20"
+        FontAttributes="Bold"/>
+            <Label x:Name="Descripcion"
+        Text="Descripcion"
+        FontSize="20"/>
+        </StackLayout>
+        <AbsoluteLayout>
+            <Button Text="Agregar al carrito"
+             TextColor="Black"
+             FontAttributes="Bold"
+             BackgroundColor="Beige"
+             Clicked="OnAgregarAlimento"
+             FontSize="17"
+             Margin="18" />
+            <ImageButton Source="menos.png"
+          AbsoluteLayout.LayoutBounds="210, 5, 75, 75"
+             HeightRequest="50"
+             WidthRequest="55" 
+             Margin="10"/>
+            <ImageButton Source="mas.png"
+          AbsoluteLayout.LayoutBounds="308, 5, 75, 75"
+             HeightRequest="50"
+             WidthRequest="50"
+             Margin="10"/>
+        </AbsoluteLayout>
+    </VerticalStackLayout>
+</ContentPage>

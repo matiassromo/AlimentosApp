@@ -18,8 +18,13 @@ public partial class AlimentoPage : ContentPage
 
     }
 
-    private async void OnNuevoAlimento(object sender, EventArgs e)
+    private async void OnDetalleAlimentos(object sender, SelectedItemChangedEventArgs e)
     {
-		await Navigation.PushAsync(new NuevoAlimentoPage());
+        await Navigation.PushAsync(new DetalleAlimentosPage());
+    }
+
+    private async void OnCarritoPage(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new CarritoPage());  
     }
 }

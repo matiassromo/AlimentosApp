@@ -15,16 +15,10 @@
         <Label HorizontalOptions="Center"
             Text="Alimentos"
             FontSize="30"></Label>
-        <Button Text="Nuevo Alimento"
-             BackgroundColor="Turquoise"
-             TextColor="Black"
-             FontAttributes="Bold"
-             FontSize="16"
-             Clicked="OnNuevoAlimento"
-             Margin="15"></Button>
         <ListView x:Name="ListaAlimentos" 
-                  RowHeight="80">
-
+                  RowHeight="80"
+                  ItemSelected="OnDetalleAlimentos">
+                  
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -47,6 +41,13 @@
             </ListView.ItemTemplate>
 
         </ListView>
+        <AbsoluteLayout>
+            <ImageButton Source="carrito.png"
+                         AbsoluteLayout.LayoutBounds="305, 290, 75, 75"
+                         HorizontalOptions="End"
+                         VerticalOptions="End"
+                         Clicked="OnCarritoPage"></ImageButton>
+        </AbsoluteLayout>
 
     </VerticalStackLayout>
 </ContentPage>
