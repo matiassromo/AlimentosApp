@@ -18,7 +18,7 @@ public partial class AlimentoPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        List<Alimento> listaAlimentos = await aPIService.GetAlimentos();
+        List<Alimento> listaAlimentos = await aPIService.GetPlato();
         var alimentos = new ObservableCollection<Alimento>(listaAlimentos);
         ListaAlimentos.ItemsSource = alimentos;
 
@@ -26,7 +26,7 @@ public partial class AlimentoPage : ContentPage
 
     private async void OnDetalleAlimentos(object sender, SelectedItemChangedEventArgs e)
     {
-        await Navigation.PushAsync(new DetalleAlimentosPage());
+        await Navigation.PushAsync(new DetalleAlimentosPage(aPIService));
     }
 
     private async void OnCarritoPage(object sender, EventArgs e)

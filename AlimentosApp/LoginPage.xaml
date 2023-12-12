@@ -3,21 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AlimentosApp.LoginPage"
              Title="Login Page"
-             BackgroundColor="DarkSlateGray">
+             BackgroundColor="#D1D1D1">
     <StackLayout VerticalOptions="Start" 
                  HorizontalOptions="Center" 
                  Margin="60">
         <Entry Placeholder="Usuario" 
+               PlaceholderColor="black"
                HorizontalTextAlignment="Center" 
                FontSize="20"/>
         <Entry Placeholder="Contraseña" 
+               PlaceholderColor="black"
                HorizontalTextAlignment="Center" 
                IsPassword="True"
                FontSize="20"/>
         <Button Text="Ingresar"
                 Margin="20"
-                BackgroundColor="Aquamarine"
-                TextColor="Black"
+                BackgroundColor="#851623"
+                TextColor="White"
                 FontAttributes="Bold"
                 Clicked="OnIngresar"/>
     </StackLayout>

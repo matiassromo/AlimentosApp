@@ -20,9 +20,9 @@ namespace AlimentosApp.Services
         }
 
 
-        public async Task<bool> DeleteAlimento(int IdProducto)
+        public async Task<bool> DeletePlato(int IdPlato)
         {
-            var response = await _httpClient.DeleteAsync($"/api/Alimento/{IdProducto}");
+            var response = await _httpClient.DeleteAsync($"/api/Plato/{IdPlato}");
             if (response.StatusCode == HttpStatusCode.NoContent)
             {
                 return true;
@@ -30,9 +30,9 @@ namespace AlimentosApp.Services
             return false;
         }
 
-        public async Task<Alimento> GetAlimento(int IdProducto)
+        public async Task<Alimento> GetPlato(int IdPlato)
         {
-            var response = await _httpClient.GetAsync($"/api/Alimento/{IdProducto}");
+            var response = await _httpClient.GetAsync($"/api/Plato/{IdPlato}");
             if (response.IsSuccessStatusCode)
             {
                 var json_response = await response.Content.ReadAsStringAsync();
@@ -42,9 +42,9 @@ namespace AlimentosApp.Services
             return new Alimento();
         }
 
-        public async Task<List<Alimento>> GetAlimentos()
+        public async Task<List<Alimento>> GetPlato()
         {
-            var response = await _httpClient.GetAsync("/api/Alimento");
+            var response = await _httpClient.GetAsync("/api/Plato");
             if (response.IsSuccessStatusCode)
             {
                 var json_response = await response.Content.ReadAsStringAsync();
@@ -55,10 +55,10 @@ namespace AlimentosApp.Services
 
         }
 
-        public async Task<Alimento> PostProducto(Alimento alimento)
+        public async Task<Alimento> PostPlato(Alimento plato)
         {
-            var content = new StringContent(JsonConvert.SerializeObject(alimento), Encoding.UTF8, "application/json");
-            var response = await _httpClient.PostAsync("/api/Alimento/", content);
+            var content = new StringContent(JsonConvert.SerializeObject(plato), Encoding.UTF8, "application/json");
+            var response = await _httpClient.PostAsync("/api/plato/", content);
             if (response.IsSuccessStatusCode)
             {
                 var json_response = await response.Content.ReadAsStringAsync();
@@ -68,15 +68,15 @@ namespace AlimentosApp.Services
             return new Alimento();
         }
 
-        public async Task<Alimento> PutAlimento(int IdProducto, Alimento producto)
+        public async Task<Alimento> PutPlato(int IdPlato, Alimento producto)
         {
             var content = new StringContent(JsonConvert.SerializeObject(producto), Encoding.UTF8, "application/json");
-            var response = await _httpClient.PutAsync($"/api/Alimento/{IdProducto}", content);
+            var response = await _httpClient.PutAsync($"/api/plato/{IdPlato}", content);
             if (response.IsSuccessStatusCode)
             {
                 var json_response = await response.Content.ReadAsStringAsync();
-                Alimento producto2 = JsonConvert.DeserializeObject<Alimento>(json_response);
-                return producto2;
+                Alimento plato2 = JsonConvert.DeserializeObject<Alimento>(json_response);
+                return plato2;
             }
             return new Alimento();
         }
